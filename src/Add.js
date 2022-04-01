@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 function Add(props){
     const [state, changeState] = useState({
-        id: 0,
+        id: "@",
         description: "",
         completed: false
     })
@@ -25,8 +25,8 @@ function Add(props){
     const submithandler =(e) =>{
         e.preventDefault();
         props.updateList(state.id, state.description, state.completed)
-        changeState({       
-            id: 0,
+        changeState({
+            id: "@",
             description: "",
             completed: false
         })
@@ -36,17 +36,17 @@ function Add(props){
         <div className='container'>
             <Form onSubmit={(e)=> submithandler(e)} >
                 <Form.Group controlId='taskID'>
-                    <Form.Label>Task ID</Form.Label>
-                    <Form.Control name="id" type="number" value={state.id} onChange={(e) => handleChange(e)}/>
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control name="id" type="text" value={state.id} onChange={(e) => handleChange(e)}/>
                 </Form.Group>
                 <Form.Group controlId="description">
                 <Form.Label>Description</Form.Label>
                 <Form.Control name="description" type="text" value={state.description} onChange={(e) => handleChange(e)}/>
                 </Form.Group>
-                <Form.Group controlId="completed">
+                {/* <Form.Group controlId="completed">
                     <Form.Label>Complete?</Form.Label>
                     <Form.Control name="completed" type="checkbox" checked={state.completed} onChange={(e) => handleChange(e)}/>
-                </Form.Group>
+                </Form.Group> */}
                 <Button variant="primary" type="submit">Submit</Button>
             </Form>
         </div>

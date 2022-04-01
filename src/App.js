@@ -12,12 +12,12 @@ import Add from './Add';
 
 function App(){
   const [todos, changeTodos] = useState([
-    { id: 1, description: "make static data", completed: false},
-    { id: 2, description: "make dynamic data", completed: false }
+    { id: "@grtwg", description: "make static data", completed: false},
+    { id: "@reger", description: "make dynamic data", completed: false }
   ])
 
   const updateList = (id, description, completed) =>{
-    console.log('form sumbittted')
+    console.log('form submitted')
     const listItem = {id, description, completed}
     changeTodos((prevState) => [...prevState, listItem])
 }
@@ -25,7 +25,7 @@ function App(){
     return (
       <div>
         <Navbar bg="light" expand="md">
-          <Navbar.Brand>ToDo List</Navbar.Brand>
+          <Navbar.Brand>Tweeter</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -50,9 +50,6 @@ function App(){
           <Route path="/view" element={
           <View todos = {todos}/>
           }/>
-
-
-          
 
           </Routes>
         </Container>

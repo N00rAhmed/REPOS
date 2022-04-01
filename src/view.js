@@ -13,9 +13,9 @@ function View(props){
         <td>
           {current.description}
         </td>
-        <td>
+        {/* <td>
           {current.completed ? "yes" : "no"}
-        </td>
+        </td> */}
       </tr>
     )
     )
@@ -27,9 +27,9 @@ function View(props){
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Task</th>
-              <th>complete</th>
+              <th>Username</th>
+              <th></th>
+              {/* <th>complete</th> */}
             </tr>
           </thead>
           <tbody>
